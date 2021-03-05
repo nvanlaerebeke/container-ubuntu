@@ -3,7 +3,7 @@
 ## Introduction
 
 Container with basic tools to quickly debug problems and test things on ubuntu.  
-This is easier to deploy and dispose then setting up virtual machines.
+This is easier to deploy and dispose virtual machines all while keeping the host machine 'clean'.
 
 ## Building the image
 
@@ -47,10 +47,6 @@ To run it, execute the following command:
 ```
 docker run --rm -ti registry.crazyzone.be/ubuntu /bin/bash
 ```
-
-## SSL/TLS
-
-No certificate support is provided, it is assumed that the container will be run behind a reverse proxy doing SSL termination
 
 ## Building with Jenkins
 
