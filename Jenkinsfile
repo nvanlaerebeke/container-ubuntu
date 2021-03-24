@@ -31,6 +31,7 @@ spec:
         container(name: 'kaniko', shell: '/busybox/sh') {
           sh '''#!/busybox/sh 
 REPO=registry.crazyzone.be
+REGISTRY_MIRROR=registry-mirror.crazyzone.be
 NAME=kickstart
 VERSION=`cat VERSION`
 
@@ -40,7 +41,7 @@ then
 else
   TAG=$GIT_LOCAL_BRANCH
 fi
-/kaniko/executor --dockerfile Dockerfile --context `pwd`/ --verbosity debug --destination $REPO/$NAME:$TAG --destination $REPO/$NAME:$VERSION --cache=true --cache-repo $REPO/cache
+/kaniko/executor --dockerfile Dockerfile --context `pwd`/ --verbosity debug --destination $REPO/$NAME:$TAG --destination $REPO/$NAME:$VERSION --cache=true --cache-repo $REPO/cache --registry-mirror $REGISTRY_MIRROR
             '''
         }
       }
