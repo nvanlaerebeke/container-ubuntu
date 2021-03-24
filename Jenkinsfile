@@ -32,7 +32,7 @@ spec:
           sh '''#!/busybox/sh 
 REPO=registry.crazyzone.be
 REGISTRY_MIRROR=registry-mirror.crazyzone.be
-NAME=kickstart
+NAME=ubuntu
 VERSION=`cat VERSION`
 
 if [[ $GIT_LOCAL_BRANCH == "main" || $GIT_LOCAL_BRANCH == "master" ]];
